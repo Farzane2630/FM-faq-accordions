@@ -65,17 +65,14 @@ section.accordions {
 
 
     .accordion {
-        padding-block-end: 1em;
         border: none;
         background: none;
         cursor: pointer;
         text-align: start;
-        border-bottom: 1px solid $Purple-100;
 
-        &:last-child {
-            border-bottom: none;
-            padding-block-end: 0;
-
+        &:not(:last-child) {
+            border-bottom: 1px solid $Purple-100;
+            padding-block-end: 1em;
         }
     }
 
@@ -86,37 +83,23 @@ section.accordions {
         cursor: pointer;
         border-radius: 0.5em;
         padding-block: 1em;
-
-
-        h3 {
-            color: $Purple-950;
-        }
+        color: $Purple-950;
 
         &:hover {
-            h3 {
-                color: $Purple-600;
-            }
+            color: $Purple-600;
         }
 
-        .accordion-toggle {
-            border: none;
-            background: none;
-            cursor: pointer;
-
-            .icon-minus {
-                display: none;
-            }
+        .icon-minus {
+            display: none;
         }
-
     }
 
     .accordion-content {
         display: none;
-        color: $Purple-600;
-        line-height: 1.5em;
-        padding-block-end: 0.5em;
     }
 
+
+    // when accordin is expanded
     .accordion[aria-expanded="true"] {
         .icon-plus {
             display: none;
@@ -128,6 +111,9 @@ section.accordions {
 
         .accordion-content {
             display: block;
+            color: $Purple-600;
+            line-height: 1.5em;
+            padding-block-end: 0.5em;
         }
     }
 }

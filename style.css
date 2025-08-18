@@ -44,42 +44,35 @@ section.header {
 section.accordions {
   display: grid; }
   section.accordions .accordion {
-    padding-block-end: 1em;
     border: none;
     background: none;
     cursor: pointer;
-    text-align: start;
-    border-bottom: 1px solid #f9f0ff; }
-    section.accordions .accordion:last-child {
-      border-bottom: none;
-      padding-block-end: 0; }
+    text-align: start; }
+    section.accordions .accordion:not(:last-child) {
+      border-bottom: 1px solid #f9f0ff;
+      padding-block-end: 1em; }
   section.accordions .accordion_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     border-radius: 0.5em;
-    padding-block: 1em; }
-    section.accordions .accordion_header h3 {
-      color: #2f1533; }
-    section.accordions .accordion_header:hover h3 {
+    padding-block: 1em;
+    color: #2f1533; }
+    section.accordions .accordion_header:hover {
       color: #8c6991; }
-    section.accordions .accordion_header .accordion-toggle {
-      border: none;
-      background: none;
-      cursor: pointer; }
-      section.accordions .accordion_header .accordion-toggle .icon-minus {
-        display: none; }
+    section.accordions .accordion_header .icon-minus {
+      display: none; }
   section.accordions .accordion-content {
-    display: none;
-    color: #8c6991;
-    line-height: 1.5em;
-    padding-block-end: 0.5em; }
+    display: none; }
   section.accordions .accordion[aria-expanded="true"] .icon-plus {
     display: none; }
   section.accordions .accordion[aria-expanded="true"] .icon-minus {
     display: block; }
   section.accordions .accordion[aria-expanded="true"] .accordion-content {
-    display: block; }
+    display: block;
+    color: #8c6991;
+    line-height: 1.5em;
+    padding-block-end: 0.5em; }
 
 /*# sourceMappingURL=style.css.map */
