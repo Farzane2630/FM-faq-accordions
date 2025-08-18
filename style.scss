@@ -65,8 +65,12 @@ section.accordions {
 
 
     .accordion {
-        border-bottom: 1px solid $Purple-100;
         padding-block-end: 1em;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-align: start;
+        border-bottom: 1px solid $Purple-100;
 
         &:last-child {
             border-bottom: none;

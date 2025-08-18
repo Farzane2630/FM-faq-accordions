@@ -44,8 +44,12 @@ section.header {
 section.accordions {
   display: grid; }
   section.accordions .accordion {
-    border-bottom: 1px solid #f9f0ff;
-    padding-block-end: 1em; }
+    padding-block-end: 1em;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: start;
+    border-bottom: 1px solid #f9f0ff; }
     section.accordions .accordion:last-child {
       border-bottom: none;
       padding-block-end: 0; }
