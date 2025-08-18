@@ -1,0 +1,129 @@
+$White: hsl(0, 100%, 100%);
+$Purple-100: hsl(275, 100%, 97%);
+$Purple-600: hsl(292, 16%, 49%);
+$Purple-950: hsl(292, 42%, 14%);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    font-family: 'Work Sans', sans-serif;
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-color: $Purple-100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-inline: 2em;
+    padding-block-start: 3em;
+
+    p {
+        font-size: 1rem; // 16px
+    }
+}
+
+
+main.card {
+    background-color: $White;
+    border-radius: 1em;
+    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    display: grid;
+    gap: 1.5em;
+
+    @media (min-width: 30em) {
+        // 480px
+        max-width: 35em;
+    }
+}
+
+section.header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    img {
+        width: 2.5em; // 40px
+        height: 2.5em; // 40px
+    }
+
+    h1.title {
+        color: $Purple-950;
+        font-size: 2rem;
+    }
+}
+
+section.accordions {
+    display: grid;
+    // gap: 1.5em;
+
+
+    .accordion {
+        border-bottom: 1px solid $Purple-100;
+        padding-block-end: 1em;
+
+        &:last-child {
+            border-bottom: none;
+            padding-block-end: 0;
+
+        }
+    }
+
+    .accordion_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 0.5em;
+        padding-block: 1em;
+
+
+        h3 {
+            color: $Purple-950;
+        }
+
+        &:hover {
+            h3 {
+                color: $Purple-600;
+            }
+        }
+
+        .accordion-toggle {
+            border: none;
+            background: none;
+            cursor: pointer;
+
+            .icon-minus {
+                display: none;
+            }
+        }
+
+    }
+
+    .accordion-content {
+        display: none;
+        color: $Purple-600;
+        line-height: 1.5em;
+        padding-block-end: 0.5em;
+    }
+
+    .accordion[aria-expanded="true"] {
+        .icon-plus {
+            display: none;
+        }
+
+        .icon-minus {
+            display: block;
+        }
+
+        .accordion-content {
+            display: block;
+        }
+    }
+}

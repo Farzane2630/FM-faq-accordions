@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.wrapper {
+  font-family: 'Work Sans', sans-serif;
+  background-image: url(assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-color: #f9f0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-inline: 2em;
+  padding-block-start: 3em; }
+  .wrapper p {
+    font-size: 1rem; }
+
+main.card {
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  display: grid;
+  gap: 1.5em; }
+  @media (min-width: 30em) {
+    main.card {
+      max-width: 35em; } }
+
+section.header {
+  display: flex;
+  align-items: center;
+  gap: 1em; }
+  section.header img {
+    width: 2.5em;
+    height: 2.5em; }
+  section.header h1.title {
+    color: #2f1533;
+    font-size: 2rem; }
+
+section.accordions {
+  display: grid; }
+  section.accordions .accordion {
+    border-bottom: 1px solid #f9f0ff;
+    padding-block-end: 1em; }
+    section.accordions .accordion:last-child {
+      border-bottom: none;
+      padding-block-end: 0; }
+  section.accordions .accordion_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0.5em;
+    padding-block: 1em; }
+    section.accordions .accordion_header h3 {
+      color: #2f1533; }
+    section.accordions .accordion_header:hover h3 {
+      color: #8c6991; }
+    section.accordions .accordion_header .accordion-toggle {
+      border: none;
+      background: none;
+      cursor: pointer; }
+      section.accordions .accordion_header .accordion-toggle .icon-minus {
+        display: none; }
+  section.accordions .accordion-content {
+    display: none;
+    color: #8c6991;
+    line-height: 1.5em;
+    padding-block-end: 0.5em; }
+  section.accordions .accordion[aria-expanded="true"] .icon-plus {
+    display: none; }
+  section.accordions .accordion[aria-expanded="true"] .icon-minus {
+    display: block; }
+  section.accordions .accordion[aria-expanded="true"] .accordion-content {
+    display: block; }
+
+/*# sourceMappingURL=style.css.map */
