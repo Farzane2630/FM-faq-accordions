@@ -1,3 +1,5 @@
+@layer reset, layout, card, accordions;
+@layer reset;
 *,
 *::before,
 *::after {
@@ -7,7 +9,7 @@
 
 .wrapper {
   font-family: 'Work Sans', sans-serif;
-  background-image: url(assets/images/background-pattern-desktop.svg);
+  background-image: url(assets/images/background-pattern-mobile.svg);
   background-repeat: no-repeat;
   background-color: #f9f0ff;
   display: flex;
@@ -16,6 +18,9 @@
   min-height: 100vh;
   padding-inline: 2em;
   padding-block-start: 3em; }
+  @media (min-width: 30em) {
+    .wrapper {
+      background-image: url(assets/images/background-pattern-desktop.svg); } }
   .wrapper p {
     font-size: 1rem; }
 
@@ -43,36 +48,33 @@ section.header {
 
 section.accordions {
   display: grid; }
-  section.accordions .accordion {
+  section.accordions details {
+    list-style: none;
     border: none;
     background: none;
     cursor: pointer;
     text-align: start; }
-    section.accordions .accordion:not(:last-child) {
-      border-bottom: 1px solid #f9f0ff;
-      padding-block-end: 1em; }
-  section.accordions .accordion_header {
+    section.accordions details:not(:last-child) {
+      border-bottom: 1px solid #f9f0ff; }
+    section.accordions details .accordion-content {
+      color: #8c6991;
+      line-height: 1.5em;
+      padding-block-end: 0.5em; }
+  section.accordions summary {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     cursor: pointer;
     border-radius: 0.5em;
     padding-block: 1em;
     color: #2f1533; }
-    section.accordions .accordion_header:hover {
+    section.accordions summary:hover {
       color: #8c6991; }
-    section.accordions .accordion_header .icon-minus {
-      display: none; }
-  section.accordions .accordion-content {
-    display: none; }
-  section.accordions .accordion[aria-expanded="true"] .icon-plus {
-    display: none; }
-  section.accordions .accordion[aria-expanded="true"] .icon-minus {
-    display: block; }
-  section.accordions .accordion[aria-expanded="true"] .accordion-content {
-    display: block;
-    color: #8c6991;
-    line-height: 1.5em;
-    padding-block-end: 0.5em; }
+  section.accordions summary::marker {
+    content: ""; }
+  section.accordions summary::after {
+    content: url("/assets/images/icon-plus.svg"); }
+  section.accordions details[open] summary::after {
+    content: url("/assets/images/icon-minus.svg"); }
 
 /*# sourceMappingURL=style.css.map */
